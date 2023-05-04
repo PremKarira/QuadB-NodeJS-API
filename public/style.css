@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&family=Montserrat:400&display=swap");
+
+body {
+  position: relative;
+  background: #191d28;
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+table {
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  margin: 0;
+  white-space: nowrap;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 1%;
+}
+
+table th {
+  color: white;
+  padding: 0 12px;
+  font-family: "Oswald";
+  font-size: 24px;
+  opacity: 0.45;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-bottom: -5px;
+}
+
+table td {
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Oswald";
+  font-size: 24px;
+  margin: 0;
+  opacity: 1;
+}
+
+tbody td {
+  background-color: #2e3241;
+}
+
+tbody td:first-child {
+  background-color: none;
+  border-radius: 10px 0 0 10px;
+}
+
+tbody td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 5;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.center-button {
+  color: #17a2b8;
+  border-color: #17a2b8;
+  display: inline-block;
+  padding: 10px;
+  background-color: 191d28;
+  font-size: 16px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

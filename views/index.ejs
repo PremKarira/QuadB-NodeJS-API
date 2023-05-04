@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Top 10 WazirX Tickers</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+
+<body>
+    <!-- <form id="fetch-form" action="/fetch-top-10" method="get">
+        <button id="fetch-button" type="submit">Fetch Top 10 Tickers</button>
+    </form> -->
+    <img src="/images/header.png" alt="My Image">
+    <div id="loader" class="loader hidden"></div>
+
+    <table id="table" class="hidden">
+        <tr>
+            <th>Name</th>
+            <th>Last</th>
+            <th>Buy</th>
+            <th>Sell</th>
+            <th>Volume</th>
+            <th>Base Unit</th>
+        </tr>
+        <% tickers.forEach(function(ticker) { %>
+            <tr>
+                <td>
+                    <%= ticker.name %>
+                </td>
+                <td>
+                    <%= ticker.last %>
+                </td>
+                <td>
+                    <%= ticker.buy %>
+                </td>
+                <td>
+                    <%= ticker.sell %>
+                </td>
+                <td>
+                    <%= ticker.volume %>
+                </td>
+                <td>
+                    <%= ticker.base_unit %>
+                </td>
+            </tr>
+            <% }); %>
+    </table>
+    <div class="button-container" style="display: block;">
+        <button class="center-button">Add hodlinfo to home screen</button>
+      </div>
+      
+    <script>
+        const loader = document.getElementById('loader');
+        const table = document.getElementById('table');
+
+        window.onload = async function () {
+            loader.classList.remove('hidden');
+            table.classList.add('hidden');
+
+            setTimeout(async function () {
+                try {
+                    const response = await fetch('/fetch-top-10', { method: 'GET' });
+                    const data = response;
+                    table.classList.remove('hidden');
+                } catch (error) {
+                    console.error(error);
+                } finally {
+                    loader.classList.add('hidden');
+                }
+            }, 2000);
+        };
+    </script>
+
+</body>
+
+</html>
